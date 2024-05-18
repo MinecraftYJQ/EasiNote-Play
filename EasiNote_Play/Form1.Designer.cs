@@ -36,13 +36,17 @@
             this.软件置顶ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.软件置托盘ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.退出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.帮助ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.关于此程序ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.关于作者ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.githubToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Starting = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -83,6 +87,9 @@
             this.软件置顶ToolStripMenuItem,
             this.软件置托盘ToolStripMenuItem,
             this.toolStripMenuItem2,
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem3,
+            this.toolStripSeparator1,
             this.退出ToolStripMenuItem});
             this.操作ToolStripMenuItem.Name = "操作ToolStripMenuItem";
             this.操作ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
@@ -90,25 +97,47 @@
             // 
             // 软件置顶ToolStripMenuItem
             // 
+            this.软件置顶ToolStripMenuItem.Checked = true;
+            this.软件置顶ToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.软件置顶ToolStripMenuItem.Name = "软件置顶ToolStripMenuItem";
-            this.软件置顶ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.软件置顶ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.软件置顶ToolStripMenuItem.Text = "软件置顶";
+            this.软件置顶ToolStripMenuItem.Click += new System.EventHandler(this.软件置顶ToolStripMenuItem_Click);
             // 
             // 软件置托盘ToolStripMenuItem
             // 
             this.软件置托盘ToolStripMenuItem.Name = "软件置托盘ToolStripMenuItem";
-            this.软件置托盘ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.软件置托盘ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.软件置托盘ToolStripMenuItem.Text = "软件置托盘";
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(133, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(145, 6);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(148, 22);
+            this.toolStripMenuItem1.Text = "重启希沃白板";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(148, 22);
+            this.toolStripMenuItem3.Text = "退出希沃白板";
+            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(145, 6);
             // 
             // 退出ToolStripMenuItem
             // 
             this.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
-            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.退出ToolStripMenuItem.Text = "退出";
             // 
             // 帮助ToolStripMenuItem
@@ -150,15 +179,25 @@
             this.Starting.UseVisualStyleBackColor = true;
             this.Starting.Click += new System.EventHandler(this.Starting_Click);
             // 
-            // checkBox1
+            // button1
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(12, 357);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(135, 21);
-            this.checkBox1.TabIndex = 5;
-            this.checkBox1.Text = "效果运行时关闭桌面";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.button1.Location = new System.Drawing.Point(12, 355);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "退出希沃白板";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(118, 355);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(99, 23);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "重启希沃白板";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form1
             // 
@@ -166,20 +205,21 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 441);
             this.ControlBox = false;
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.Starting);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EN - 希沃白板软件";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
@@ -204,7 +244,11 @@
         private System.Windows.Forms.ToolStripMenuItem 关于作者ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem githubToolStripMenuItem;
         private System.Windows.Forms.Button Starting;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
 

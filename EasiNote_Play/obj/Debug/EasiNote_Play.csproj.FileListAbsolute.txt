@@ -1,0 +1,10 @@
+G:\EasiNote_Play\EasiNote_Play\bin\Debug\EasiNote_Play.exe.config
+G:\EasiNote_Play\EasiNote_Play\bin\Debug\EasiNote_Play.exe
+G:\EasiNote_Play\EasiNote_Play\bin\Debug\EasiNote_Play.pdb
+G:\EasiNote_Play\EasiNote_Play\obj\Debug\EasiNote_Play.csproj.AssemblyReference.cache
+G:\EasiNote_Play\EasiNote_Play\obj\Debug\EasiNote_Play.Form1.resources
+G:\EasiNote_Play\EasiNote_Play\obj\Debug\EasiNote_Play.Properties.Resources.resources
+G:\EasiNote_Play\EasiNote_Play\obj\Debug\EasiNote_Play.csproj.GenerateResource.cache
+G:\EasiNote_Play\EasiNote_Play\obj\Debug\EasiNote_Play.csproj.CoreCompileInputs.cache
+G:\EasiNote_Play\EasiNote_Play\obj\Debug\EasiNote_Play.exe
+G:\EasiNote_Play\EasiNote_Play\obj\Debug\EasiNote_Play.pdb

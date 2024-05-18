@@ -85,58 +85,66 @@ namespace EasiNote_Play
         {
             if (MessageBox.Show("注意：\n此程序仅用来演示！\n产生的一切纠纷和责任作者概不负责！", "宇宙免责声明", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
             {
-                Start(checkBox1.Checked);
+                
             }
         }
 
         private void Start(bool explorer)
         {
-            if(explorer)
+            
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            foreach (Process processToKill in Process.GetProcessesByName("EasiNote"))
             {
-                Task.Run(() =>
-                {
-                    while (true)
-                    {
-                        bool isRunning = Process.GetProcessesByName("explorer").Length > 0;
-                        if (isRunning)
-                        {
-                            foreach (Process processToKill in Process.GetProcessesByName("explorer"))
-                            {
-                                // 结束进程
-                                processToKill.Kill();
+                // 结束进程
+                processToKill.Kill();
 
-                                // 等待进程结束
-                                processToKill.WaitForExit();
+                // 等待进程结束
+                processToKill.WaitForExit();
 
-                                Console.WriteLine("进程已结束.");
-                            }
-                        }
-                    }
-                });
+                Console.WriteLine("进程已结束.");
+            }
+            Process.Start(File.ReadAllText("EasiNote\\EasiNote_Path.txt"));
+        }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            foreach (Process processToKill in Process.GetProcessesByName("EasiNote"))
+            {
+                // 结束进程
+                processToKill.Kill();
+
+                // 等待进程结束
+                processToKill.WaitForExit();
+
+                Console.WriteLine("进程已结束.");
             }
         }
 
-        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        private void 软件置顶ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (checkBox1.Checked)
+            if (TopMost)
             {
-                Process[] processes = Process.GetProcesses();//获取所有进程信息
-                for (int i = 0; i < processes.Length; i++)
-                {
-                    if (processes[i].ProcessName.ToLower() == "explorer")
-                    {
-                        try
-                        {
-                            processes[i].Kill(); //停止进程
-                        }
-                        catch (Exception)
-                        {
-                            Console.WriteLine("进程访问失败！");
-                        }
-                    }
-                }
-                Process.Start("explorer.exe");//再启动进程
+                TopMost = !软件置顶ToolStripMenuItem.Checked;
+                软件置顶ToolStripMenuItem.Checked = TopMost;
             }
+            else
+            {
+                TopMost = !软件置顶ToolStripMenuItem.Checked;
+                软件置顶ToolStripMenuItem.Checked = TopMost;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            toolStripMenuItem3_Click(sender, e);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            toolStripMenuItem1_Click(sender,e);
         }
     }
 }
